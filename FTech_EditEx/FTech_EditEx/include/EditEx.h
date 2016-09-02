@@ -4,6 +4,8 @@
 //----------------------------------------------------------
 // Programmed by William Kim
 //----------------------------------------------------------
+// Last Update : 2016-09-02 14:48
+//----------------------------------------------------------
 
 // CEditEx
 class CEditEx : public CEdit
@@ -15,6 +17,8 @@ public:
 	virtual ~CEditEx();
 
 public :
+	void SetEnable(bool bEnable) { m_bEnable = bEnable; EnableWindow(m_bEnable); Invalidate(); }
+
 	void SetAlignRight() { ModifyStyle(ES_LEFT | ES_CENTER,ES_RIGHT); Invalidate(); }
 	void SetAlignLeft()  { ModifyStyle(ES_RIGHT | ES_CENTER,ES_LEFT); Invalidate(); }
 	void SetAlignCenter(){ ModifyStyle(ES_LEFT | ES_RIGHT,ES_CENTER); Invalidate(); }
@@ -33,6 +37,7 @@ public :
 	void SetStyleTextBold(bool bEnable);
 
 private :
+	bool m_bEnable;
 	COLORREF m_clrBkg;
 	COLORREF m_clrBorder;
 	COLORREF m_clrText;

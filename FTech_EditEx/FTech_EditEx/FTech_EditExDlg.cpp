@@ -46,6 +46,7 @@ BOOL CFTech_EditExDlg::OnInitDialog()
 	SetIcon(m_hIcon, TRUE);			// Set big icon
 	SetIcon(m_hIcon, FALSE);		// Set small icon
 
+	m_wndEdit.SetEnable(false);
 	m_wndEdit.SetAlignLeft();				// 글자 정렬
 	m_wndEdit.SetSizeText(30);				// 글자 크기
 	m_wndEdit.SetStyleTextBold(true);		// 글자 스타일

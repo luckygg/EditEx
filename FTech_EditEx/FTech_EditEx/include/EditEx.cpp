@@ -18,6 +18,7 @@ CEditEx::CEditEx()
 	
 	m_bBold = false;
 	m_nSizeText = 10;
+	m_bEnable = true;
 }
 
 CEditEx::~CEditEx()
@@ -115,7 +116,13 @@ void CEditEx::OnNcPaint()
 	rect.OffsetRect( -rect.left, -rect.top);
 
 	CBrush brush(m_clrBorder);
-	pDC->FrameRect( &rect, &brush);
+	if (m_bEnable == true)
+		pDC->FrameRect( &rect, &brush);
+	else
+	{
+		CBrush dis_brush(RGB(64,64,64));
+		pDC->FrameRect( &rect, &dis_brush);
+	}
 	ReleaseDC( pDC);
 
 }
