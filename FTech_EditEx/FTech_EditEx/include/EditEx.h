@@ -24,7 +24,8 @@ public :
 	void SetAlignCenter(){ ModifyStyle(ES_LEFT | ES_RIGHT,ES_CENTER); Invalidate(); }
 
 	void SetText(CString strText) { SetWindowText(strText); Invalidate(); }
-	void SetTextInt(int nValue) { CString tmp; tmp.Format(L"%d", nValue); SetWindowText(tmp); Invalidate(); }
+	void SetTextInt(int nValue) { CString tmp=L""; tmp.Format(L"%d", nValue); SetWindowText(tmp); Invalidate(); }
+	void SetTextDouble(double dValue) { CString tmp=L""; tmp.Format(L"%.3f", dValue); SetWindowText(tmp); Invalidate(); }
 	int GetTextInt() { CString tmp; GetWindowText(tmp); return _ttoi(tmp); }
 	CString GetText() { CString tmp; GetWindowText(tmp); return tmp; }
 
